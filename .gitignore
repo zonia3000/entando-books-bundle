@@ -1,0 +1,23 @@
+######################
+# Entando
+######################
+
+.entando
+
+**/node_modules
+**/target
+
+######################
+# IntelliJ IDEA
+######################
+
+.idea
+*.iws
+*.iml
+*.ipr
+
+######################
+# Keycloak DB files
+######################
+
+/svc/keycloak/keycloak-db

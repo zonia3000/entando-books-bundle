@@ -1,0 +1,28 @@
+code: test_book_mfe
+parentCode: homepage
+titles:
+  en: Test Book MFE
+  it: Test Book MFE
+pageModel: 1-2-column
+ownerGroup: administrators
+joinGroups: []
+displayedInMenu: true
+seo: false
+charset: utf-8
+status: published
+widgets:
+  - code: logo
+    config: null
+    pos: 0
+  - code: navigation-menu
+    config: null
+    pos: 1
+  - code: search_form
+    config: null
+    pos: 2
+  - code: keycloak-login
+    config: null
+    pos: 3
+  - code: books-mfe-47d73b95
+    config: null
+    pos: 4

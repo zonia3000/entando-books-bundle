@@ -1,0 +1,39 @@
+{
+    "microservices": [
+        {
+            "name": "books-service",
+            "stack": "spring-boot",
+            "healthCheckPath": "/health",
+	    "dbms": "mysql"
+        }
+    ],
+    "microfrontends": [
+        {
+            "name": "books-mfe",
+            "customElement": "books-mfe",
+            "stack": "react",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "books-mfe",
+                "it": "books-mfe"
+            },
+            "apiClaims": [
+                {
+                    "name": "books-api",
+                    "type": "internal",
+                    "serviceName": "books-service"
+                }
+            ]
+        }
+    ],
+    "svc": [
+        "keycloak",
+        "mysql"
+    ],
+    "name": "books-bundle",
+    "version": "0.0.3",
+    "description": "books-bundle description",
+    "type": "bundle"
+}
