@@ -1,39 +1,65 @@
 {
     "microservices": [
         {
-            "name": "books-service",
+            "name": "books-service-mysql",
             "stack": "spring-boot",
             "healthCheckPath": "/health",
-	    "dbms": "mysql"
+	        "dbms": "mysql"
+        },
+        {
+            "name": "books-service-postgresql",
+            "stack": "spring-boot",
+            "healthCheckPath": "/health",
+	        "dbms": "postgresql"
         }
     ],
     "microfrontends": [
         {
-            "name": "books-mfe",
-            "customElement": "books-mfe",
+            "name": "books-mfe-mysql",
+            "customElement": "books-mfe-mysql",
             "stack": "react",
             "type": "widget",
             "group": "free",
             "publicFolder": "public",
             "titles": {
-                "en": "books-mfe",
-                "it": "books-mfe"
+                "en": "books-mfe-mysql",
+                "it": "books-mfe-mysql"
             },
             "apiClaims": [
                 {
                     "name": "books-api",
                     "type": "internal",
-                    "serviceName": "books-service"
+                    "serviceName": "books-service-mysql"
+                }
+            ]
+        },
+        {
+            "name": "books-mfe-postgresql",
+            "customElement": "books-mfe-postgresql",
+            "stack": "react",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "books-mfe-postgresql",
+                "it": "books-mfe-postgresql"
+            },
+            "apiClaims": [
+                {
+                    "name": "books-api",
+                    "type": "internal",
+                    "serviceName": "books-service-postgresql"
                 }
             ]
         }
+
     ],
     "svc": [
         "keycloak",
         "mysql"
     ],
     "name": "books-bundle",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "books-bundle description",
     "type": "bundle"
 }
