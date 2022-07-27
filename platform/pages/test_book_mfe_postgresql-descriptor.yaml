@@ -1,8 +1,8 @@
-code: test_book_mfe
+code: test_book_mfe_postgresql
 parentCode: homepage
 titles:
-  en: Test Book MFE
-  it: Test Book MFE
+  en: Test Book MFE postgresql
+  it: Test Book MFE postgresql
 pageModel: 1-2-column
 ownerGroup: administrators
 joinGroups: []
@@ -23,6 +23,6 @@ widgets:
   - code: keycloak-login
     config: null
     pos: 3
-  - code: books-mfe-47d73b95
+  - code: books-mfe-postgresql-ed1d60fc
     config: null
     pos: 4
