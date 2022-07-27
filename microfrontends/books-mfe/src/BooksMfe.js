@@ -4,10 +4,11 @@ import './BooksMfe.css';
 import KeycloakContext from './KeycloakContext';
 
 function BooksMfe({ config }) {
-  const { systemParams } = config || {};
+  const { systemParams, params } = config || {};
   const { api } = systemParams || {};
+  const { selectedApiClaim } = params || {};
 
-  const internalApiUrl = api && api['books-api'].url;
+  const internalApiUrl = api && api[selectedApiClaim].url;
 
   const [books, setBooks] = useState(null);
 

@@ -1,9 +1,15 @@
 {
     "systemParams": {
         "api": {
-            "books-api": {
+            "books-mysql-api": {
                 "url": "http://localhost:8081"
+            },
+            "books-postgresql-api": {
+                "url": "http://localhost:8082"
             }
         }
+    },
+    "params": {
+        "selectedApiClaim": "books-mysql-api"
     }
 }
