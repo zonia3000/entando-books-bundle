@@ -33,7 +33,7 @@
         "mysql"
     ],
     "name": "books-bundle",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "books-bundle description",
     "type": "bundle"
 }
