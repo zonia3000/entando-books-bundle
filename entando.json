@@ -4,62 +4,62 @@
             "name": "books-service-mysql",
             "stack": "spring-boot",
             "healthCheckPath": "/health",
-	        "dbms": "mysql"
+            "dbms": "mysql"
         },
         {
             "name": "books-service-postgresql",
             "stack": "spring-boot",
             "healthCheckPath": "/health",
-	        "dbms": "postgresql"
+            "dbms": "postgresql"
         }
     ],
     "microfrontends": [
         {
-            "name": "books-mfe-mysql",
-            "customElement": "books-mfe-mysql",
+            "name": "books-mfe",
+            "customElement": "books-mfe",
             "stack": "react",
             "type": "widget",
             "group": "free",
             "publicFolder": "public",
             "titles": {
-                "en": "books-mfe-mysql",
-                "it": "books-mfe-mysql"
+                "en": "books-mfe",
+                "it": "books-mfe"
             },
             "apiClaims": [
                 {
-                    "name": "books-api",
+                    "name": "books-mysql-api",
                     "type": "internal",
                     "serviceName": "books-service-mysql"
-                }
-            ]
-        },
-        {
-            "name": "books-mfe-postgresql",
-            "customElement": "books-mfe-postgresql",
-            "stack": "react",
-            "type": "widget",
-            "group": "free",
-            "publicFolder": "public",
-            "titles": {
-                "en": "books-mfe-postgresql",
-                "it": "books-mfe-postgresql"
-            },
-            "apiClaims": [
+                },
                 {
-                    "name": "books-api",
+                    "name": "books-postgresql-api",
                     "type": "internal",
                     "serviceName": "books-service-postgresql"
                 }
-            ]
+            ],
+            "params": [
+                {
+                    "name": "selectedApiClaim",
+                    "description": "Selected API Claim"
+                }
+            ],
+	        "configMfe": "books-mfe-config"
+        },
+        {
+            "name": "books-mfe-config",
+            "customElement": "books-mfe-config",
+            "stack": "react",
+            "type": "widget-config",
+            "group": "free",
+            "publicFolder": "public"
         }
-
     ],
     "svc": [
         "keycloak",
         "mysql"
     ],
     "name": "books-bundle",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "books-bundle description",
     "type": "bundle"
 }
