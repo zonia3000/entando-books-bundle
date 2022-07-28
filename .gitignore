@@ -4,6 +4,10 @@
 
 .entando
 
+######################
+# Build folders
+######################
+
 **/node_modules
 **/target
 **/build
@@ -22,4 +26,10 @@ microservices/books-service/databases
 # Keycloak DB files
 ######################
 
-/svc/keycloak/keycloak-db
+/svc/keycloak/keycloak-db/*
+
+######################
+# Files to keep
+######################
+
+!.gitkeep
