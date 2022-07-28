@@ -4,14 +4,15 @@ version: '3.7'
 services:
   postgresql:
     image: postgres:13.4
+    restart: always
     # If you want to relocate the postgres data (volume) to your local directory, uncomment the lines below
     # volumes:
-    #   - ~/volumes/entando-bundle-cli/sonia-bundle/postgresql/:/var/lib/postgresql/data/
+    #   - ~/volumes/entando-bundle-cli/books-bundle/postgresql/:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=sonia-bundle-user
-      - POSTGRES_PASSWORD=sonia-bundle-password
+      - POSTGRES_USER=books-bundle-user
+      - POSTGRES_PASSWORD=books-bundle-password
       - POSTGRES_HOST_AUTH_METHOD=trust
-      - POSTGRES_DB=sonia-bundle
+      - POSTGRES_DB=books-bundle
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
     ports:
