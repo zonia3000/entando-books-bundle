@@ -96,6 +96,9 @@
 >>>>>>> eb40fc9 (added support for bundle dbmode4)
         },
         {
+            "commands": {
+                "pack": "echo 'skip build'"
+            },
             "name": "books-service-oracle",
             "stack": "spring-boot",
             "healthCheckPath": "/health",
