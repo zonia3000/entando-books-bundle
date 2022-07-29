@@ -23,7 +23,8 @@ class BooksMfeConfig extends React.Component {
         <select id="selectedApiClaim" name="selectedApiClaim" onChange={e => this.handleChangeApiClaim(e.target.value)} defaultValue={selectedApiClaim} required>
           <option value="">Select...</option>
           <option value="books-mysql-api">MySQL</option>
-          <option value="books-mysql-postgresql">PostgreSQL</option>
+          <option value="books-postgresql-api">PostgreSQL</option>
+          <option value="books-oracle-api">Oracle12</option>
         </select>
       </div>
     );
