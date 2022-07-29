@@ -10,7 +10,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=books-bundle-password
       - MYSQL_USER=books-bundle-user
-      - MYSQL_PASSWORD=books-password
+      - MYSQL_PASSWORD=books-bundle-password
       - MYSQL_DATABASE=books-bundle
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix

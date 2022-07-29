@@ -6,7 +6,7 @@
             "healthCheckPath": "/health",
             "dbms": "mysql",
             "commands": {
-                "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver --spring.datasource.username=books-bundle-user --spring.datasource.password=books-password --spring.datasource.url=jdbc:mysql://localhost:3306/books-bundle?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false --spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect'"
+                "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver --spring.datasource.username=books-bundle-user --spring.datasource.password=books-bundle-password --spring.datasource.url=jdbc:mysql://localhost:3306/books-bundle?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false --spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect'"
             }
         },
         {
@@ -15,7 +15,7 @@
             "healthCheckPath": "/health",
             "dbms": "postgresql",
             "commands": {
-                "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=org.postgresql.Driver --spring.datasource.username=books-bundle-user --spring.datasource.password=books-password --spring.datasource.url=jdbc:postgresql://localhost:5432/books-bundle --spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect'"
+                "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=org.postgresql.Driver --spring.datasource.username=books-bundle-user --spring.datasource.password=books-bundle-password --spring.datasource.url=jdbc:postgresql://localhost:5432/books-bundle --spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect'"
             }
         }
     ],
