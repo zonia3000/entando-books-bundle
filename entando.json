@@ -11,6 +11,12 @@
             "stack": "spring-boot",
             "healthCheckPath": "/health",
             "dbms": "postgresql"
+        },
+        {
+            "name": "books-service-oracle",
+            "stack": "spring-boot",
+            "healthCheckPath": "/health",
+            "dbms": "oracle"
         }
     ],
     "microfrontends": [
@@ -35,6 +41,11 @@
                     "name": "books-postgresql-api",
                     "type": "internal",
                     "serviceName": "books-service-postgresql"
+                },
+                {
+                    "name": "books-oracle-api",
+                    "type": "internal",
+                    "serviceName": "books-service-oracle"
                 }
             ],
             "params": [
