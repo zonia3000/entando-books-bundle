@@ -1,9 +1,0 @@
-{
-    "systemParams": {
-        "api": {
-            "books-api": {
-                "url": "http://localhost:8081"
-            }
-        }
-    }
-}

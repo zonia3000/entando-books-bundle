@@ -1,0 +1,29 @@
+code: test_book_mfe_postgresql
+parentCode: homepage
+titles:
+  en: Test Book MFE postgresql
+  it: Test Book MFE postgresql
+pageModel: 1-2-column
+ownerGroup: administrators
+joinGroups: []
+displayedInMenu: true
+seo: false
+charset: utf-8
+status: published
+widgets:
+  - code: logo
+    config: null
+    pos: 0
+  - code: navigation-menu
+    config: null
+    pos: 1
+  - code: search_form
+    config: null
+    pos: 2
+  - code: keycloak-login
+    config: null
+    pos: 3
+  - code: books-mfe-ed1d60fc
+    config:
+      selectedApiClaim: books-postgresql-api
+    pos: 4

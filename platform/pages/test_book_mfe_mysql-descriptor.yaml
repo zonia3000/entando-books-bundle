@@ -1,8 +1,8 @@
-code: test_book_mfe
+code: test_book_mfe_mysql
 parentCode: homepage
 titles:
-  en: Test Book MFE
-  it: Test Book MFE
+  en: Test Book MFE mysql
+  it: Test Book MFE mysql
 pageModel: 1-2-column
 ownerGroup: administrators
 joinGroups: []
@@ -23,6 +23,7 @@ widgets:
   - code: keycloak-login
     config: null
     pos: 3
-  - code: books-mfe-47d73b95
-    config: null
+  - code: books-mfe-ed1d60fc
+    config:
+      selectedApiClaim: books-mysql-api
     pos: 4
