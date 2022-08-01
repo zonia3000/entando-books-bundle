@@ -17,6 +17,12 @@
             "commands": {
                 "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=org.postgresql.Driver --spring.datasource.username=books-bundle-user --spring.datasource.password=books-bundle-password --spring.datasource.url=jdbc:postgresql://localhost:5432/books-bundle --spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect'"
             }
+        },
+        {
+            "name": "books-service-oracle",
+            "stack": "spring-boot",
+            "healthCheckPath": "/health",
+            "dbms": "oracle"
         }
     ],
     "microfrontends": [
@@ -41,6 +47,11 @@
                     "name": "books-postgresql-api",
                     "type": "internal",
                     "serviceName": "books-service-postgresql"
+                },
+                {
+                    "name": "books-oracle-api",
+                    "type": "internal",
+                    "serviceName": "books-service-oracle"
                 }
             ],
             "params": [
