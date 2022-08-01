@@ -22,7 +22,10 @@
             "name": "books-service-oracle",
             "stack": "spring-boot",
             "healthCheckPath": "/health",
-            "dbms": "oracle"
+            "dbms": "oracle",
+            "commands": {
+                "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver --spring.datasource.username=SYSTEM --spring.datasource.password=books-bundle-password --spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE --spring.jpa.database-platform=org.hibernate.dialect.Oracle12cDialect'"
+            }
         }
     ],
     "microfrontends": [
@@ -74,7 +77,8 @@
     "svc": [
         "keycloak",
         "mysql",
-        "postgresql"
+        "postgresql",
+        "oracle"
     ],
     "name": "books-bundle",
     "version": "0.0.6",
