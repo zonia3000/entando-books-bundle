@@ -4,28 +4,129 @@
             "name": "books-service-mysql",
             "stack": "spring-boot",
             "healthCheckPath": "/health",
-            "dbms": "mysql",
+            "dbms": "none",
             "commands": {
+                "pack": "echo 'skip build'",
                 "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver --spring.datasource.username=books-bundle-user --spring.datasource.password=books-bundle-password --spring.datasource.url=jdbc:mysql://localhost:3306/books-bundle?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false --spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect'"
-            }
+            },
+            "env": [
+                {
+                    "name":"SPRING_DATASOURCE_USERNAME",
+                    "valueFrom": {
+                        "secretKeyRef": {
+                            "name": "ed1d60fc-285a480f-external-books-service-mysql-secret",
+                            "key": "SPRING_DATASOURCE_USERNAME"
+                        }
+                    }
+                },
+                {
+                    "name":"SPRING_DATASOURCE_PASSWORD",
+                    "valueFrom": {
+                        "secretKeyRef": {
+                            "name": "ed1d60fc-285a480f-external-books-service-mysql-secret",
+                            "key": "SPRING_DATASOURCE_PASSWORD"
+                        }
+                    }
+                },
+                {
+                    "name":"SPRING_DATASOURCE_URL",
+                    "valueFrom": {
+                        "secretKeyRef": {
+                            "name": "ed1d60fc-285a480f-external-books-service-mysql-secret",
+                            "key": "SPRING_DATASOURCE_URL"
+                        }
+                    }
+                },
+                {
+                    "name":"SPRING_JPA_DATABASE_PLATFORM",
+                    "value": "org.hibernate.dialect.MySQL8Dialect"
+                }
+            ]
         },
         {
             "name": "books-service-postgresql",
             "stack": "spring-boot",
             "healthCheckPath": "/health",
-            "dbms": "postgresql",
+            "dbms": "none",
             "commands": {
                 "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=org.postgresql.Driver --spring.datasource.username=books-bundle-user --spring.datasource.password=books-bundle-password --spring.datasource.url=jdbc:postgresql://localhost:5432/books-bundle --spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect'"
-            }
+            },
+            "env": [
+                {
+                    "name":"SPRING_DATASOURCE_USERNAME",
+                    "valueFrom": {
+                        "secretKeyRef": {
+                            "name": "ed1d60fc-285a480f-external-books-service-postgresql-secret",
+                            "key": "SPRING_DATASOURCE_USERNAME"
+                        }
+                    }
+                },
+                {
+                    "name":"SPRING_DATASOURCE_PASSWORD",
+                    "valueFrom": {
+                        "secretKeyRef": {
+                            "name": "ed1d60fc-285a480f-external-books-service-postgresql-secret",
+                            "key": "SPRING_DATASOURCE_PASSWORD"
+                        }
+                    }
+                },
+                {
+                    "name":"SPRING_DATASOURCE_URL",
+                    "valueFrom": {
+                        "secretKeyRef": {
+                            "name": "ed1d60fc-285a480f-external-books-service-postgresql-secret",
+                            "key": "SPRING_DATASOURCE_URL"
+                        }
+                    }
+                },
+                {
+                    "name":"SPRING_JPA_DATABASE_PLATFORM",
+                    "value": "org.hibernate.dialect.PostgreSQLDialect"
+                }
+            ]
         },
         {
             "name": "books-service-oracle",
             "stack": "spring-boot",
             "healthCheckPath": "/health",
-            "dbms": "oracle",
+            "dbms": "none",
             "commands": {
+                "pack": "echo 'skip build'",
                 "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver --spring.datasource.username=SYSTEM --spring.datasource.password=books-bundle-password --spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE --spring.jpa.database-platform=org.hibernate.dialect.Oracle12cDialect'"
-            }
+            },
+            "env": [
+                {
+                    "name":"SPRING_DATASOURCE_USERNAME",
+                    "valueFrom": {
+                        "secretKeyRef": {
+                            "name": "ed1d60fc-285a480f-external-books-service-oracle-secret",
+                            "key": "SPRING_DATASOURCE_USERNAME"
+                        }
+                    }
+                },
+                {
+                    "name":"SPRING_DATASOURCE_PASSWORD",
+                    "valueFrom": {
+                        "secretKeyRef": {
+                            "name": "ed1d60fc-285a480f-external-books-service-oracle-secret",
+                            "key": "SPRING_DATASOURCE_PASSWORD"
+                        }
+                    }
+                },
+                {
+                    "name":"SPRING_DATASOURCE_URL",
+                    "valueFrom": {
+                        "secretKeyRef": {
+                            "name": "ed1d60fc-285a480f-external-books-service-oracle-secret",
+                            "key": "SPRING_DATASOURCE_URL"
+                        }
+                    }
+                },
+                {
+                    "name":"SPRING_JPA_DATABASE_PLATFORM",
+                    "value": "org.hibernate.dialect.Oracle12cDialect"
+                }
+            ]
         }
     ],
     "microfrontends": [
@@ -81,7 +182,7 @@
         "oracle"
     ],
     "name": "books-bundle",
-    "version": "0.0.7",
+    "version": "0.0.7-dbmode4",
     "description": "books-bundle description",
     "type": "bundle"
 }

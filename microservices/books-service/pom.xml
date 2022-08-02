@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.entando</groupId>
     <artifactId>books-service</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.7-dbmode4</version>
     <name>books-service</name>
     <description>Books Service</description>
     <properties>
