@@ -24,3 +24,8 @@
 button {
   margin: 16px 0;
 }
+
+.delete {
+  color: #ff0000;
+  cursor: pointer;
+}

@@ -3,6 +3,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import BooksMfe from '../BooksMfe';
 import KeycloakContext from '../KeycloakContext';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const KEYCLOAK_EVENT_TYPE = 'keycloak';
 

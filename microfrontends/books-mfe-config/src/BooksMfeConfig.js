@@ -20,7 +20,7 @@ class BooksMfeConfig extends React.Component {
     return (
       <div className="App">
         <label htmlFor="selectedApiClaim">Select the database:</label><br />
-        <select id="selectedApiClaim" name="selectedApiClaim" onChange={e => this.handleChangeApiClaim(e.target.value)} defaultValue={selectedApiClaim} required>
+        <select id="selectedApiClaim" value={selectedApiClaim} name="selectedApiClaim" onChange={e => this.handleChangeApiClaim(e.target.value)} defaultValue={selectedApiClaim} required>
           <option value="">Select...</option>
           <option value="books-mysql-api">MySQL</option>
           <option value="books-postgresql-api">PostgreSQL</option>
