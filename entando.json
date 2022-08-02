@@ -1,19 +1,14 @@
 {
     "microservices": [
         {
-            "commands": {
-                "pack": "echo 'skip build'"
-            },
             "name": "books-service-mysql",
             "stack": "spring-boot",
             "healthCheckPath": "/health",
-<<<<<<< HEAD
-            "dbms": "mysql",
-            "commands": {
-                "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver --spring.datasource.username=books-bundle-user --spring.datasource.password=books-bundle-password --spring.datasource.url=jdbc:mysql://localhost:3306/books-bundle?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false --spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect'"
-            }
-=======
             "dbms": "none",
+            "commands": {
+                "pack": "echo 'skip build'",
+                "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver --spring.datasource.username=books-bundle-user --spring.datasource.password=books-bundle-password --spring.datasource.url=jdbc:mysql://localhost:3306/books-bundle?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false --spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect'"
+            },
             "env": [
                 {
                     "name":"SPRING_DATASOURCE_USERNAME",
@@ -47,19 +42,15 @@
                     "value": "org.hibernate.dialect.MySQL8Dialect"
                 }
             ]
->>>>>>> eb40fc9 (added support for bundle dbmode4)
         },
         {
             "name": "books-service-postgresql",
             "stack": "spring-boot",
             "healthCheckPath": "/health",
-<<<<<<< HEAD
-            "dbms": "postgresql",
+            "dbms": "none",
             "commands": {
                 "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=org.postgresql.Driver --spring.datasource.username=books-bundle-user --spring.datasource.password=books-bundle-password --spring.datasource.url=jdbc:postgresql://localhost:5432/books-bundle --spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect'"
-            }
-=======
-            "dbms": "none",
+            },
             "env": [
                 {
                     "name":"SPRING_DATASOURCE_USERNAME",
@@ -93,22 +84,16 @@
                     "value": "org.hibernate.dialect.PostgreSQLDialect"
                 }
             ]
->>>>>>> eb40fc9 (added support for bundle dbmode4)
         },
         {
-            "commands": {
-                "pack": "echo 'skip build'"
-            },
             "name": "books-service-oracle",
             "stack": "spring-boot",
             "healthCheckPath": "/health",
-<<<<<<< HEAD
-            "dbms": "oracle",
-            "commands": {
-                "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver --spring.datasource.username=SYSTEM --spring.datasource.password=books-bundle-password --spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE --spring.jpa.database-platform=org.hibernate.dialect.Oracle12cDialect'"
-            }
-=======
             "dbms": "none",
+            "commands": {
+                "pack": "echo 'skip build'",
+                "run": "mvn spring-boot:run -Dspring-boot.run.arguments='--spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver --spring.datasource.username=SYSTEM --spring.datasource.password=books-bundle-password --spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE --spring.jpa.database-platform=org.hibernate.dialect.Oracle12cDialect'"
+            },
             "env": [
                 {
                     "name":"SPRING_DATASOURCE_USERNAME",
@@ -142,7 +127,6 @@
                     "value": "org.hibernate.dialect.Oracle12cDialect"
                 }
             ]
->>>>>>> eb40fc9 (added support for bundle dbmode4)
         }
     ],
     "microfrontends": [
@@ -198,11 +182,7 @@
         "oracle"
     ],
     "name": "books-bundle",
-<<<<<<< HEAD
-    "version": "0.0.7",
-=======
-    "version": "0.0.6",
->>>>>>> eb40fc9 (added support for bundle dbmode4)
+    "version": "0.0.7-dbmode4",
     "description": "books-bundle description",
     "type": "bundle"
 }
