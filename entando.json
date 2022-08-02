@@ -81,7 +81,7 @@
         "oracle"
     ],
     "name": "books-bundle",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "books-bundle description",
     "type": "bundle"
 }
